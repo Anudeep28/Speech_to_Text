@@ -6,7 +6,7 @@ import numpy as np
 import speech_recognition as sr
 import whisper
 import torch
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 # from datetime import datetime, timedelta
 from queue import Queue
 from time import sleep
