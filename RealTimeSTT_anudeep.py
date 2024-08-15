@@ -9,7 +9,7 @@ class RealTimeSTT:
     def __init__(self):
         recorder_config = {
         'spinner': False,
-        'model': 'tiny',#'large-v2',
+        'model': 'large-v3',#'large-v2',
         'language': 'en',
         'silero_sensitivity': 0.4,
         'webrtc_sensitivity': 2,
