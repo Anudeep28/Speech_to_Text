@@ -18,8 +18,9 @@ class RealTimeSTT:
         'min_gap_between_recordings': 0,
         'enable_realtime_transcription': True,
         'realtime_processing_pause': 0.2,
-        'realtime_model_type': 'tiny.en',
+        'realtime_model_type': 'tiny',
         'on_realtime_transcription_update': self.on_realtime_transcription_update, 
+        "wake_words":"jarvis"
         }
         self.recorder = AudioToTextRecorder(
             **recorder_config
