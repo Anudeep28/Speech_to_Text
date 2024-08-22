@@ -132,7 +132,7 @@ env.bak/
 venv.bak/
 
 # Ignore Folder
-
+AI4Bharat_models/
 
 # Spyder project settings
 .spyderproject
