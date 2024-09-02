@@ -133,6 +133,9 @@ venv.bak/
 
 # Ignore Folder
 AI4Bharat_models/
+dataset_anu/
+Custom_Whisper_fine_tuning/Model_Output/
+Custom_Whisper_fine_tuning/dataset_anu/
 
 # Spyder project settings
 .spyderproject
