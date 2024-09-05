@@ -1,6 +1,7 @@
 # Function to split the torchvision dataset from the total no of dataset
-from torchvision import datasets
-def split_dataset(dataset:torchvision.datasets, split_size:float=0.2, seed:int=42):
+import torch
+from torch.utils.data import Dataset
+def split_dataset(dataset:Dataset, split_size:float=0.2, seed:int=42):
     """Randomly splits a given dataset into two proportions based on split_size and seed.
 
     Args:

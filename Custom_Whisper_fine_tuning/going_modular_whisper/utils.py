@@ -20,7 +20,7 @@ def save_model(model: torch.nn.Module,
   Example usage:
     save_model(model=model_0,
                target_dir="models",
-               model_name="05_going_modular_tingvgg_model.pth")
+               model_name="xyz.pth")
   """
   # Create target directory
   target_dir_path = Path(target_dir)
@@ -33,8 +33,12 @@ def save_model(model: torch.nn.Module,
 
   # Save the model state_dict()
   print(f"[INFO] Saving model to: {model_save_path}")
-  torch.save(obj=model.state_dict(),
-             f=model_save_path)
+  # torch.save(obj=model.state_dict(),
+  #            f=model_save_path)
+  torch.save({
+    "dims": model.dims.__dict__,
+    "model_state_dict": model.state_dict(),
+}, model_save_path)
   
 
 # Moving the images

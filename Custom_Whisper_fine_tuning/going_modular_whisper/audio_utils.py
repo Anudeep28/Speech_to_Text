@@ -121,30 +121,36 @@ class AudioUtil():
   # ----------------------------
   # Plot the audio signal
   # ----------------------------
-  def show_wave(self,aud, label='', ax=None):
+  @staticmethod
+  def show_wave(aud, label='', ax=None):
     sig, sr = aud
     if (not ax):
-      _,ax = plt.subplots(1, 1, figsize=(3, 3))
+      _,ax = plt.subplots(1, 1, figsize=(12, 3))
     ax.plot(sig[0])
     ax.set_title(label)
+    plt.show()
 
   # ----------------------------
   # Plot the audio signal before and after a transform
   # ----------------------------
-  def show_transform(self,orig, trans):
+  @staticmethod
+  def show_transform(orig, trans, label):
     osig,osr = orig
     tsig,tsr = trans
     if orig is not None: plt.plot(osig[0], 'm', label="Orig.")
     if trans is not None: plt.plot(tsig[0], 'c', alpha=0.5, label="Transf.")
+    plt.title(label)
     plt.legend()
     plt.show()
 
   # ----------------------------
   # Plot the spectrogram
   # ----------------------------
-  def show_spectro(self,spec, label='', ax=None, figsize=(6,6)):
+  @staticmethod
+  def show_spectro(spec, label='', ax=None, figsize=(6,6)):
     if (not ax):
       _,ax = plt.subplots(1, 1, figsize=figsize)
     # Reduce first dimension if it is greyscale
     ax.imshow(spec if (spec.shape[0]==3) else spec.squeeze(0))
     ax.set_title(f'{label}, {list(spec.shape)}')
+    plt.show()

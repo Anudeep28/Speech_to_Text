@@ -9,7 +9,7 @@ import torch
 
 from torchvision import transforms
 
-import data_setup, engine, model_builder, utils
+import data_setup, Custom_Whisper_fine_tuning.going_modular_whisper.whisper_engine as whisper_engine, model_builder, utils
 
 def main():
   # Create a parser
@@ -97,7 +97,7 @@ def main():
                               lr=LEARNING_RATE)
 
   # Start training with help from engine.py
-  engine.train(model=model,
+  whisper_engine.train(model=model,
               train_dataloader=train_dataloader,
               test_dataloader=test_dataloader,
               loss_fn=loss_fn,
